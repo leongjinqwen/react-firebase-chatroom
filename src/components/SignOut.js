@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button} from '../styles/components'
 
 
 
@@ -6,7 +7,7 @@ const SignOut = ({auth}) => {
 
   return auth.currentUser && (
     <>
-      <button onClick={()=>auth.signOut()} >Sign Out</button>
+      <Button onClick={()=>auth.signOut()} >Sign Out</Button>
     </>
   );
 }

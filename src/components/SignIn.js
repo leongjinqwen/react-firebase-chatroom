@@ -1,17 +1,16 @@
 import React from 'react'
-
+import {Button} from '../styles/components'
 
 
 const SignIn = ({firebase, auth}) => {
 
   const handleSignIn = () => {
-    console.log("sign in")
     const provider = new firebase.auth.GoogleAuthProvider()
     auth.signInWithPopup(provider)
   }
   return (
     <>
-      <button onClick={handleSignIn} >Sign In with Google</button>
+      <Button onClick={handleSignIn} >Sign In with Google</Button>
     </>
   );
 }

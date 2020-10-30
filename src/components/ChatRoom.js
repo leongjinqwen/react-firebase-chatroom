@@ -4,7 +4,6 @@ import firebase from 'firebase/app'
 
 
 
-
 const ChatRoom = ({auth, messages, messagesRef}) => {
 
   const dummy = useRef()

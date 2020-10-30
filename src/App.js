@@ -10,6 +10,7 @@ import ChatRoom from './components/ChatRoom';
 import SignIn from './components/SignIn';
 import SignOut from './components/SignOut';
 
+import {Navbar,NavTitle} from './styles/components'
 
 // only initialize firebase if not exist
 if (!firebase.apps.length) {
@@ -27,6 +28,12 @@ if (!firebase.apps.length) {
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
+const navbar = {
+  display:'flex',
+  justifyContent:'space-between',
+  alignItems: 'center',
+}
+
 function App() {
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
@@ -35,10 +42,11 @@ function App() {
   const [ user ] = useAuthState(auth) // return user object via hook
   
   return (
-    <div className="App">
-      <header>
+    <div>
+      <Navbar dark style={navbar}>
+        <NavTitle>Chatroom</NavTitle>
         <SignOut auth={auth}/>
-      </header>
+      </Navbar>
       <section>
         { user ? <ChatRoom auth={auth} messages={messages} messagesRef={messagesRef} /> : <SignIn auth={auth} firebase={firebase}/> }
       </section>
