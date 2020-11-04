@@ -2,11 +2,12 @@
 1. User can sign in with Google
 1. User can read latest 25 messages
 1. User can send message 
+1. Messages saved in Firebase Cloud Firestore
 
 
 ## Setup
 ```bash
-git clone <repository-link>
+git clone https://github.com/leongjinqwen/react-firebase-chatroom.git
 cd react-firebase-chatroom
 ```
 ### 1. Set up environment variables

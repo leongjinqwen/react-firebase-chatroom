@@ -4,7 +4,11 @@ import firebase from 'firebase/app'
 import { ChatBox,Footer } from '../styles/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
-
+const divStyle = {
+  minHeight:'90%',
+  maxHeight:"90%",
+  overflow: 'scroll'
+}
 
 const ChatRoom = ({auth, firestore}) => {
 
@@ -33,7 +37,7 @@ const ChatRoom = ({auth, firestore}) => {
 
   return (
     <>
-      <div style={{maxHeight:"90%",overflow: 'scroll'}}>
+      <div style={divStyle}>
         {
           messages ? messages.reverse().map((mes)=>{
             return (
