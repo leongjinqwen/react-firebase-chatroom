@@ -5,12 +5,12 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
 import ChatRoom from './components/ChatRoom';
 import SignIn from './components/SignIn';
 import SignOut from './components/SignOut';
 
 import {Navbar,NavTitle} from './styles/components'
+import logo from './firebase-logo.png'
 
 // only initialize firebase if not exist
 if (!firebase.apps.length) {
@@ -45,20 +45,19 @@ const sectionStyle = {
 }
 
 function App() {
-  const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
-  
-  const [messages] = useCollectionData(query, {idField: 'id'});
   const [ user ] = useAuthState(auth) // return user object via hook
   
   return (
     <div style={containerStyle}>
       <Navbar dark style={navbar}>
-        <NavTitle>Firebase Chatroom</NavTitle>
+        <NavTitle>
+          <img src={logo} alt="logo" />
+          Chatroom
+        </NavTitle>
         <SignOut auth={auth}/>
       </Navbar>
       <section style={sectionStyle}>
-        { user ? <ChatRoom auth={auth} messages={messages} messagesRef={messagesRef} /> : <SignIn auth={auth} firebase={firebase}/> }
+        { user ? <ChatRoom auth={auth} firestore={firestore} /> : <SignIn auth={auth} firebase={firebase}/> }
       </section>
     </div>
   );

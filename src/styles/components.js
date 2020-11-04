@@ -9,6 +9,7 @@ export const Button = styled.button`
   margin: 1em;
   padding: 0.25em 1em;
   border-radius: 5px;
+  box-shadow:none;
   &:hover {
     background: ${props => props.outlined ? props.color : "white" };
     color: ${props => props.outlined ?  "white": props.color};
@@ -23,6 +24,10 @@ export const Navbar = styled.div`
 
 export const NavTitle = styled.h4`
   margin: 0 10px;
+  img {
+    height: 30px;
+    margin: 0 8px;
+  }
 `
 
 export const Avatar = styled.img`
@@ -34,29 +39,30 @@ export const ChatBox = styled.form`
   width: 100%;
   background:transparent;
   input {
-    width: 90%;
+    width: 85%;
     padding: 8px 16px;
     outline:none;
   }
   button[type=submit] {
-    width: 10%;
+    width: 15%;
     font-weight: 700;
-    background: white;
     border: 2px solid cornflowerblue;
-    color: cornflowerblue;
     padding:8px 16px;
     box-sizing:border-box;
     cursor: pointer;
-
+    background:cornflowerblue;
+    color:white;
+    
     &:hover {
-      background:cornflowerblue;
-      color:white;
+      background: white;
+      color: cornflowerblue;
     }
   }
 `
 export const Footer = styled.footer`
-  color:#eeeeee;
-  font-size:12px;
-  font-weight:700;
-  text-align:center;
+  color: #eeeeee;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
 `
