@@ -5,9 +5,8 @@ export const Button = styled.button`
   color: ${props => props.outlined ? props.color : "white"};
   border: 1px solid ${props => props.outlined ? props.color : 'white' } ;
   cursor: pointer;
-  font-size: 1em;
   margin: 1em;
-  padding: 0.25em 1em;
+  padding: 0.25em 0.5em;
   border-radius: 5px;
   box-shadow:none;
   &:hover {
@@ -65,4 +64,16 @@ export const Footer = styled.footer`
   font-weight: 700;
   text-align: center;
   vertical-align: middle;
+`
+
+export const Card = styled.div`
+  height: 35vh;
+  margin: 36px auto;
+  border-radius: 36px;
+  background: #eeeeee;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2em 2.75em;
 `

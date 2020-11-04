@@ -20,6 +20,7 @@ const sentStyle = {
   background:"#27bb8a6c",
   color: '#e9e9e9',
   padding: '0.5em',
+  textAlign:'right',
 }
 
 const receivedStyle = {
@@ -29,6 +30,7 @@ const receivedStyle = {
   background: "#97bafc93",
   color: '#e9e9e9',
   padding: '0.5em',
+  textAlign:'left',
 }
 
 const Conversation = ({auth, message}) => {

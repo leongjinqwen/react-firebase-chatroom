@@ -5,6 +5,12 @@
 1. Messages saved in Firebase Cloud Firestore
 
 
+## Screenshot
+<img src="https://jw-aws-bucket.s3-ap-southeast-1.amazonaws.com/firebast-chat-signin.png" alt="firebase-chatroom-signin" width="350">
+
+<img src="https://jw-aws-bucket.s3-ap-southeast-1.amazonaws.com/firebase-chat-chatroom.png" alt="firebase-chatroom" width="350">
+
+
 ## Setup
 ```bash
 git clone https://github.com/leongjinqwen/react-firebase-chatroom.git

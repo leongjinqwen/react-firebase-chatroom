@@ -1,6 +1,6 @@
 import React from 'react'
-import {Button} from '../styles/components'
-
+import { Button, Card, NavTitle } from '../styles/components'
+import logo from '../firebase-logo.png'
 
 const SignIn = ({firebase, auth}) => {
 
@@ -9,9 +9,15 @@ const SignIn = ({firebase, auth}) => {
     auth.signInWithPopup(provider)
   }
   return (
-    <>
-      <Button outlined color="cornflowerblue" onClick={handleSignIn} >Sign In with Google</Button>
-    </>
+    <div className="row p-5">
+      <Card className="col-md-4">
+        <NavTitle>
+          <img src={logo} alt='logo' />
+          <div>Sign in to CHAT with us!</div>
+        </NavTitle>
+        <Button outlined color="cornflowerblue" onClick={handleSignIn} >Sign In with Google</Button>
+      </Card>
+    </div>
   );
 }
     
