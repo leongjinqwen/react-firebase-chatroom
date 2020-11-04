@@ -18,6 +18,7 @@ const sentStyle = {
   borderRadius: '15px',
   display: 'inlineBlock',
   background:"#27bb8a6c",
+  color: '#e9e9e9',
   padding: '0.5em',
 }
 
@@ -26,6 +27,7 @@ const receivedStyle = {
   borderRadius: '15px',
   display: 'inlineBlock',
   background: "#97bafc93",
+  color: '#e9e9e9',
   padding: '0.5em',
 }
 

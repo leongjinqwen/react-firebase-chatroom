@@ -1,6 +1,7 @@
 import React, { useRef,useState } from 'react'
 import Conversation from './Conversation';
 import firebase from 'firebase/app'
+import { ChatBox,Footer } from '../styles/components'
 
 
 
@@ -27,7 +28,7 @@ const ChatRoom = ({auth, messages, messagesRef}) => {
 
   return (
     <>
-      <div>
+      <div style={{maxHeight:"90%",overflow: 'scroll'}}>
         {
           messages ? messages.map((mes)=>{
             return (
@@ -36,15 +37,14 @@ const ChatRoom = ({auth, messages, messagesRef}) => {
           })
           : null
         }
+        <span ref={dummy}></span>
       </div>
 
-      <span ref={dummy}></span>
-
-      <h1>{auth.currentUser.displayName}</h1>
-      <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <input type="submit" value="Send" disabled={!formValue}/>
-      </form>
+      <ChatBox onSubmit={sendMessage}>
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message..." />
+        <button type="submit" disabled={!formValue} >Send</button>
+      </ChatBox>
+      <Footer>© 2020 JwLeong.</Footer>
     </>
   );
 }

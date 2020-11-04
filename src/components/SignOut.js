@@ -7,7 +7,7 @@ const SignOut = ({auth}) => {
 
   return auth.currentUser && (
     <>
-      <Button onClick={()=>auth.signOut()} >Sign Out</Button>
+      <Button outlined color='red' onClick={()=>auth.signOut()} >Sign Out</Button>
     </>
   );
 }

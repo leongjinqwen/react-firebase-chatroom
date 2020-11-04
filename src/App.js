@@ -28,10 +28,20 @@ if (!firebase.apps.length) {
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
+const containerStyle = {
+  height:'100vh',
+  overflow:'hidden', 
+  background:"#2b2b2b"
+}
 const navbar = {
   display:'flex',
   justifyContent:'space-between',
   alignItems: 'center',
+}
+const sectionStyle = {
+  height:"90vh",
+  position: 'relative', 
+  textAlign:'center',
 }
 
 function App() {
@@ -42,12 +52,12 @@ function App() {
   const [ user ] = useAuthState(auth) // return user object via hook
   
   return (
-    <div>
+    <div style={containerStyle}>
       <Navbar dark style={navbar}>
-        <NavTitle>Chatroom</NavTitle>
+        <NavTitle>Firebase Chatroom</NavTitle>
         <SignOut auth={auth}/>
       </Navbar>
-      <section>
+      <section style={sectionStyle}>
         { user ? <ChatRoom auth={auth} messages={messages} messagesRef={messagesRef} /> : <SignIn auth={auth} firebase={firebase}/> }
       </section>
     </div>

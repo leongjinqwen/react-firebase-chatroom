@@ -10,7 +10,7 @@ const SignIn = ({firebase, auth}) => {
   }
   return (
     <>
-      <Button onClick={handleSignIn} >Sign In with Google</Button>
+      <Button outlined color="cornflowerblue" onClick={handleSignIn} >Sign In with Google</Button>
     </>
   );
 }
