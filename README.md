@@ -6,7 +6,7 @@
 
 ## Demo
 
-Click here to see LIVE site: https://nestagram.netlify.app/
+Click here to see LIVE site: https://nestagram.netlify.app/  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/46359ff0-2615-4549-ac9e-2663a17ca30d/deploy-status)](https://app.netlify.com/sites/react-firebase-chatroom/deploys)
 
 ## Screenshot
